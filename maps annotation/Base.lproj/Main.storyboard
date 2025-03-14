@@ -18,24 +18,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-gq-SkB">
-                                <rect key="frame" x="0.0" y="67" width="393" height="771"/>
+                                <rect key="frame" x="0.0" y="200.66666666666669" width="393" height="637.33333333333326"/>
+                                <gestureRecognizers/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6V9-H1-oeu" appends="YES" id="xni-q6-p65"/>
+                                </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSd-AG-L95">
+                                <rect key="frame" x="0.0" y="104" width="393" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgH-W4-A9c">
+                                <rect key="frame" x="0.0" y="140.33333333333334" width="393" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4zw-gq-SkB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LN9-u7-e47"/>
-                            <constraint firstItem="4zw-gq-SkB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Swg-9C-Nfr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4zw-gq-SkB" secondAttribute="trailing" id="vHG-3R-21f"/>
-                            <constraint firstItem="4zw-gq-SkB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="xFA-ie-xyv"/>
+                            <constraint firstItem="GgH-W4-A9c" firstAttribute="top" secondItem="tSd-AG-L95" secondAttribute="bottom" constant="18" id="2N0-pL-Xte"/>
+                            <constraint firstItem="GgH-W4-A9c" firstAttribute="top" secondItem="tSd-AG-L95" secondAttribute="bottom" constant="16" id="6UF-fB-onE"/>
+                            <constraint firstItem="4zw-gq-SkB" firstAttribute="top" secondItem="GgH-W4-A9c" secondAttribute="bottom" constant="39.999999999999972" id="CYG-sS-jxd"/>
+                            <constraint firstItem="GgH-W4-A9c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="InR-ar-aED"/>
+                            <constraint firstItem="tSd-AG-L95" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QeP-do-NLI"/>
+                            <constraint firstItem="tSd-AG-L95" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="T3c-1n-7ui"/>
+                            <constraint firstItem="4zw-gq-SkB" firstAttribute="trailing" secondItem="GgH-W4-A9c" secondAttribute="trailing" id="ZVY-VR-kzP"/>
+                            <constraint firstItem="GgH-W4-A9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a5f-Hv-jYL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4zw-gq-SkB" secondAttribute="bottom" constant="-19.999999999999886" id="hON-gt-hEx"/>
+                            <constraint firstItem="tSd-AG-L95" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o3C-Zw-dvb"/>
+                            <constraint firstItem="4zw-gq-SkB" firstAttribute="leading" secondItem="GgH-W4-A9c" secondAttribute="leading" id="pEh-sy-gST"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="latLabel" destination="tSd-AG-L95" id="ke4-sS-Drd"/>
+                        <outlet property="longLabel" destination="GgH-W4-A9c" id="QJj-ZG-wHm"/>
                         <outlet property="mapView" destination="4zw-gq-SkB" id="6Sv-Ml-h32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6V9-H1-oeu">
+                    <connections>
+                        <action selector="didTouchMap:" destination="BYZ-38-t0r" id="IgW-CH-9E6"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
         </scene>

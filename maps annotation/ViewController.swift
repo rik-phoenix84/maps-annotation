@@ -13,6 +13,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var latLabel: UILabel!
+    
+    @IBOutlet weak var longLabel: UILabel!
+    
+    //Focus su un luogo specifico
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         //45.070339, 7.686864
@@ -28,8 +34,17 @@ class ViewController: UIViewController {
             annotation.title = "Città di Torino"
             annotation.subtitle = "Angolo di via Po"
             mapView.addAnnotation(annotation)
+    }*/
+    
+    
+
+    @IBAction func didTouchMap(_ sender: UILongPressGestureRecognizer) {
+        let position = sender.location(in: mapView) //per indicare la posizione
+        let coord = mapView.convert(position, toCoordinateFrom: mapView)
+        
+        print(coord)
     }
-
-
+    
+    
 }
 
