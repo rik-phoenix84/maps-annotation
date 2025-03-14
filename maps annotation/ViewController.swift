@@ -42,7 +42,8 @@ class ViewController: UIViewController {
         let position = sender.location(in: mapView) //per indicare la posizione
         let coord = mapView.convert(position, toCoordinateFrom: mapView)
         
-        print(coord)
+        latLabel.text = "Latitude: \(coord.latitude)"
+        longLabel.text = "Longitude: \(coord.longitude)"
     }
     
     
